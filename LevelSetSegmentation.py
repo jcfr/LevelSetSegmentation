@@ -27,12 +27,11 @@ class LevelSetSegmentationWidget:
       self.parent.show()
     
   def setup(self):
-    
-      workflow = ctk.ctkWorkflow()
+      self.workflow = ctk.ctkWorkflow()
       
     
       workflowWidget = ctk.ctkWorkflowStackedWidget()
-      workflowWidget.setWorkflow(workflow)
+      workflowWidget.setWorkflow(self.workflow)
     
       steps = []
     
@@ -42,9 +41,9 @@ class LevelSetSegmentationWidget:
     
       # Add transition associated to steps
       for i in range(len(steps) - 1):
-        workflow.addTransition(steps[i], steps[i + 1])
+        self.workflow.addTransition(steps[i], steps[i + 1])
     
-      workflow.start()
+      self.workflow.start()
     
       workflowWidget.visible = True
       self.layout.addWidget(workflowWidget)    
