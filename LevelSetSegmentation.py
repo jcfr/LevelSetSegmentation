@@ -3,17 +3,16 @@ from __main__ import vtk, qt, ctk, slicer
 # Level Set Segmentation using VMTK based Tools
 #
 
-class Wizard:
+class LevelSetSegmentation:
   def __init__(self, parent):
-    parent.title = "WizardTest"
+    parent.title = "LevelSetSegmentation"
     parent.category = ""
     parent.contributor = "--"
     parent.helpText = """dsfdsf"""
     parent.acknowledgementText = """sdfsdfdsf"""
     self.parent = parent
 
-
-class WizardWidget:
+class LevelSetSegmentationWidget:
   def __init__(self, parent=None):
     if not parent:
       self.parent = slicer.qMRMLWidget()
